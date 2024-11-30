@@ -1,0 +1,23 @@
+﻿@model BookViewModel
+
+<h2>Kitap Detayları</h2>
+<div>
+    <strong>Başlık:</strong> @Model.Title
+</div>
+<div>
+    <strong>Yazar:</strong> @Model.AuthorName
+</div>
+<div>
+    <strong>Tür:</strong> @Model.Genre
+</div>
+<div>
+    <strong>Yayın Tarihi:</strong> @Model.PublishDate.ToShortDateString()
+</div>
+<div>
+    <strong>ISBN:</strong> @Model.ISBN
+</div>
+<div>
+    <strong>Mevcut Kopyalar:</strong> @Model.CopiesAvailable
+</div>
+
+<a href="@Url.Action("Index", "Book")">Geri</a>

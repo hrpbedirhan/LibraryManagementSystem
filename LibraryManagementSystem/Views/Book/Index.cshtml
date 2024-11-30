@@ -1,0 +1,37 @@
+﻿@model List<BookViewModel>
+
+<h2>Book List</h2>
+
+<a class="btn btn-primary" asp-controller="Book" asp-action="Add">Yeni Kitap</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Publish Date</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Copies Available</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.AuthorName</td>
+                <td>@book.Genre</td>
+                <td>@book.PublishDate.ToShortDateString()</td>
+                <td>@book.ISBN</td>
+                <td>@book.CopiesAvailable</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@book.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
