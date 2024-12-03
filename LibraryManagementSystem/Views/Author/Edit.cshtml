@@ -1,0 +1,33 @@
+﻿@model EditAuthorViewModel
+@{
+    ViewData["Title"] = "Yazar Düzenle";
+}
+
+<h1>Yeni Kitap</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for="FirstName" class="form-control">
+        <div class="form-text text-danger">
+            <span asp-validation-for="FirstName"></span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control">
+        <div class="form-text text-danger">
+            <span asp-validation-for="LastName"></span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DateOfBirth" class="form-label"></label>
+        <input asp-for="DateOfBirth" type="date" class="form-control">
+        <div class="form-text text-danger">
+            <span asp-validation-for="DateOfBirth"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+    <a class="btn btn-secondary" asp-action="Index">Vazgeç</a>
+</form>

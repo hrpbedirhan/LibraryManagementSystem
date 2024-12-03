@@ -1,8 +1,40 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Ana Sayfa";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row align-items-center bg-light rounded shadow p-4">
+        <div class="col-md-6">
+            <h1 class="text-primary fw-bold">Kütüphane Yönetim Sistemi</h1>
+            <p class="mt-3 text-secondary">
+                Kitaplarınızı kolayca yönetin, yeni kitaplar ekleyin ve yazar bilgilerini düzenleyin.
+                Her şey bir tık uzağınızda!
+            </p>
+            <a asp-controller="Book" asp-action="Index" class="btn btn-primary btn-lg mt-3"><i class="fas fa-book"></i> Kitapları Görüntüle</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="https://fastly.picsum.photos/id/3/400/300.jpg?hmac=Ga4VBNPNP9cGIhsaiXHJZthr3pMpYgWbh4faHohelrg" alt="Library Illustration" class="img-fluid">
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h2 class="text-center text-primary mb-4">Öne Çıkan Özellikler</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                <h5>Kitap Yönetimi</h5>
+                <p>Kitapları ekleyin, düzenleyin ve kolayca yönetin.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-user fa-3x text-success mb-3"></i>
+                <h5>Yazar Yönetimi</h5>
+                <p>Yazar bilgilerini görüntüleyin ve düzenleyin.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fas fa-chart-line fa-3x text-warning mb-3"></i>
+                <h5>İstatistikler</h5>
+                <p>Kitap ve yazar istatistiklerini kolayca takip edin.</p>
+            </div>
+        </div>
+    </div>
 </div>

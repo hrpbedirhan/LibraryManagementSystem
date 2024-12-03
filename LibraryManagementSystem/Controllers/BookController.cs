@@ -28,6 +28,7 @@ namespace LibraryManagementSystem.Controllers
         //add book
         public IActionResult Add()
         {
+            //yazarları yazdırdığımız için yazar listesini gönderiyoruz
             ViewData["Author"] = Data.Author;
             return View();
         }
@@ -48,7 +49,7 @@ namespace LibraryManagementSystem.Controllers
                 };
                 Data.Book.Add(newBook);
 
-                TempData["Mesaj"] = "Yeni kitap başarıyla eklendi.";
+                TempData["Message"] = "Yeni kitap başarıyla eklendi.";
                 return RedirectToAction("Index");
             }
 
@@ -101,7 +102,7 @@ namespace LibraryManagementSystem.Controllers
                 book.ISBN = vm.ISBN;
                 book.CopiesAvailable = vm.CopiesAvailable;
 
-                TempData["Mesaj"] = "Değişiklikler başarıyla kaydedildi.";
+                TempData["Message"] = "Değişiklikler başarıyla kaydedildi.";
                 return RedirectToAction("Index");
             }
 
@@ -129,11 +130,11 @@ namespace LibraryManagementSystem.Controllers
                 return NotFound();
 
             Data.Book.Remove(book);
-            TempData["Mesaj"] = "Kitap başarıyla silindi.";
+            TempData["Message"] = "Kitap başarıyla silindi.";
             return RedirectToAction("Index");
         }
 
-        //details
+        //book details
         public IActionResult Details(int id)
         {
             var book = Data.Book.FirstOrDefault(b => b.Id == id);

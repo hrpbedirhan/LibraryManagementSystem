@@ -1,23 +1,41 @@
 ﻿@model BookViewModel
+@{
+    ViewData["Title"] = "Kitap Detayı";
+}
 
-<h2>Kitap Detayları</h2>
-<div>
-    <strong>Başlık:</strong> @Model.Title
-</div>
-<div>
-    <strong>Yazar:</strong> @Model.AuthorName
-</div>
-<div>
-    <strong>Tür:</strong> @Model.Genre
-</div>
-<div>
-    <strong>Yayın Tarihi:</strong> @Model.PublishDate.ToShortDateString()
-</div>
-<div>
-    <strong>ISBN:</strong> @Model.ISBN
-</div>
-<div>
-    <strong>Mevcut Kopyalar:</strong> @Model.CopiesAvailable
-</div>
+<div class="container mt-5">
+    <div class="position-relative p-4 border rounded shadow-sm bg-light">
+        <a asp-action="Index" class="btn btn-outline-danger position-absolute top-0 end-0 mt-3 me-3">
+            <i class="fas fa-times"></i>
+        </a>
+        
+        <h2 class="text-primary mb-4">Kitap Detayları</h2>
 
-<a href="@Url.Action("Index", "Book")">Geri</a>
+        <div class="px-3">
+            <div class="mb-3">
+                <h5 class="text-muted">Kitap Adı:</h5>
+                <p class="text-dark fs-5">@Model.Title</p>
+            </div>
+            <div class="mb-3">
+                <h5 class="text-muted">Yazar:</h5>
+                <p class="text-dark fs-5">@Model.AuthorName</p>
+            </div>
+            <div class="mb-3">
+                <h5 class="text-muted">Tür:</h5>
+                <p class="text-dark fs-5">@Model.Genre</p>
+            </div>
+            <div class="mb-3">
+                <h5 class="text-muted">Yayın Tarihi:</h5>
+                <p class="text-dark fs-5">@Model.PublishDate.ToShortDateString()</p>
+            </div>
+            <div class="mb-3">
+                <h5 class="text-muted">ISBN:</h5>
+                <p class="text-dark fs-5">@Model.ISBN</p>
+            </div>
+            <div class="mb-3">
+                <h5 class="text-muted">Mevcut Kopyalar:</h5>
+                <p class="text-dark fs-5">@Model.CopiesAvailable</p>
+            </div>
+        </div>
+    </div>
+</div>
