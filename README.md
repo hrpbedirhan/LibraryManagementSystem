@@ -77,7 +77,7 @@ Bu proje, bir **ASP.NET Core MVC** uygulamasıdır ve kütüphanelerin kitap ve 
 ### **Projenin Çalıştırılması**
  
    ```bash
-   git clone https://github.com/hrpbedirhan/LibraryManagementSystem
+   git clone <https://github.com/hrpbedirhan/LibraryManagementSystem>
    cd LibraryManagementSystem
    dotnet run
 
